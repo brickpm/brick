@@ -1,0 +1,20 @@
+{
+  "name": "brick",
+  "version": "0.0.1",
+  "description": "Build brick by brick with Brick.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ."
+  },
+  "author": "JohainDev",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.4",
+    "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  }
+}
