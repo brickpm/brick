@@ -35,6 +35,7 @@ I haven't set a release date yet because Brick is still under development.
 #### How can i make a Brick package?
 
 You cant make packages for brick yet, but when that happens there will be a documentation tab.
+\*\*See [Brick Server](https://github.com/brickpm/brick-server) for details when they come.\*\*
 
 ## Feedback
 
