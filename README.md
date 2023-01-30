@@ -1,23 +1,23 @@
-
 # Brick
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 
 Build brick by brick with the package manager Brick.
 
-
 ## Authors
 
 - [@JohainDev](https://www.github.com/johaindev)
 
-
 ## Installation
 
 ### Windows
+
 Still under development
 
 ### Linux
+
 Still under development
+
 ## FAQ
 
 #### Will Brick be compatible with Mac?
@@ -35,10 +35,10 @@ I haven't set a release date yet because Brick is still under development.
 #### How can i make a Brick package?
 
 You cant make packages for brick yet, but when that happens there will be a documentation tab.
+
 ## Feedback
 
 If you have any feedback, please send me a discord message at Johan#0339.
-
 
 ## Contributing
 
