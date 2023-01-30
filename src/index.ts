@@ -8,9 +8,10 @@ const Options = yargs
 if (yargs.argv._[0] == null || yargs.argv._[0] == undefined) {
     console.log(Options.usage)
 } else {
-    try {
+    /*try {
         require(`main/command/${yargs.argv._[0].toLowerCase()}.ts`).Execute(['groovy'])
-    } catch (FileNotFoundException) {
+    } catch () {
         console.log(`brick: ${yargs.argv._[0].toLowerCase()}: Command not found.`)
-    }
+    }*/
+    require(`./main/command/${yargs.argv._[0].toLowerCase()}.ts`).Execute(yargs.argv._[1], yargs.argv._[2])
 }

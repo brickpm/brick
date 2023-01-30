@@ -9,9 +9,7 @@ module.exports = {
         alias: ['i']
     },
     
-    async exec(args: string[]) {
-
-        args = args.slice(0)
+    async Execute(args: string[]) {
 
         console.log(args)
         
