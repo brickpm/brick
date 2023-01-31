@@ -1,4 +1,13 @@
-var fs = require('fs');
+/* 
+ * This file is part of Brick Package Manager or BrickPM (https://github.com/brickpm/brick/)
+ * Copyright (c) 2023 JohainDev and contributors.
+ * 
+ * This source code is subject to the terms of the GNU General Public
+ * License version 3.0. If a copy of the GPL was not distributed with this
+ * file, You can obtain one at: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+const fs = require('fs');
 const axios = require('axios')
 
 module.exports = {
@@ -13,24 +22,29 @@ module.exports = {
     async Execute(args: string) {
 
         const url = `https://github.com/brickpm/brick-server/raw/main/packages/${args}.zip`
-        const file = fs.createWriteStream(`${args}.zip`)
+        const filePath = `${args}.zip`
 
+        
         axios({
-            url,
-            method: 'GET',
+            method: 'get',
+            url: url,
             responseType: 'stream'
-        }).then((res: { data: { pipe: (arg0: any) => void; }; }) => {
-            res.data.pipe(file)
-            file.on('finish', () => {
-                console.log(`brick: ${args}: Package installed.`)
-            })
-        }).catch(function (Error: { response: { status: number; }; message: any; request: any; }) {
-            if (Error.response.status == 404) {
-                console.log(`brick: ${args}: Package installation error: Package not found. ${Error.message}`)
-            } else {
-                console.log(`brick: ${args}: Package installation error. ${Error.message}`)
+        })
+        .then((response: { status: number; data: { pipe: (arg0: any) => void; }; }) => {
+            if (response.status === 200) {
+                const writeStream = fs.createWriteStream(filePath)
+                response.data.pipe(writeStream);
+                writeStream.on('finish', () => {
+                    console.log(`brick: ${args}: Package installed.`)
+                })
             }
         })
-        
+        .catch((error: { response: { status: number; }; }) => {
+            if (error.response.status === 404) {
+                console.log(`brick: ${args}: Package installation error: Package not found. Request failed with status code 404.`)
+                return;
+            }
+            throw error;
+        });
     }
 }
