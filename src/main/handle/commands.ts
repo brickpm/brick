@@ -7,6 +7,11 @@ module.exports = {
     },
 
     async Execute(args: string[]) {
-        
+        if (args[0] == null || args[0] == undefined) {
+            console.log('Options.usage')
+            return Error
+        } else {
+            require(`./main/command/${args[0].toLowerCase()}.ts`).Execute(args[1])
+        }
     }
 }
