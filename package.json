@@ -1,6 +1,6 @@
 {
   "name": "brick",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Build brick by brick with Brick.",
   "main": "src/index.ts",
   "scripts": {

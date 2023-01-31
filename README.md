@@ -20,6 +20,22 @@ Still under development
 
 ## FAQ
 
+### How can i use Brick in Beta Stages?
+
+You will have to have NodeJS and NPM (Node Package Manager) installed. Then:
+
+```bash
+git clone https://github.com/brickpm/brick.git
+cd brick
+npm i
+```
+
+To run brick commands:
+
+```bash
+npm start <operation (install, (remove, update))> <package (test)>
+```
+
 #### Will Brick be compatible with Mac?
 
 Yes, that's the plan, but Windows and Linux are a higher priority.
