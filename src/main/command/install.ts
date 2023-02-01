@@ -11,17 +11,6 @@ const fs = require('fs');
 const axios = require('axios')
 
 module.exports = {
-    about: {
-        alias: 'i',
-        type: 'string',
-        description: 'Install specified package',
-        demandOption: false,
-    },
-
-    async getAbout() {
-            return this.about
-    },
-
     async Execute(args: string) {
 
         const url = `https://github.com/brickpm/brick-server/raw/main/packages/${args}.zip`

@@ -10,10 +10,20 @@
 const yargs = require('yargs')
 
 const options = yargs
-    .usage('Usage: brick <operation> <package>\n<operation>: install | remove | update\n<package>: Package to install')
+    .usage('Usage: brick <operation> <package>')
     .options({
-        install: require('./main/command/install').getAbout(),
-        remove: require('./main/command/remove').getAbout(),
+        install: {
+            alias: 'i',
+            type: 'string',
+            description: 'Install specified package',
+            demandOption: false,
+        },
+        remove: {
+            alias: 'r',
+            type: 'string',
+            description: 'Remove specified package',
+            demandOption: false,
+        },
     })
     .help(true).argv
 

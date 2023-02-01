@@ -8,18 +8,10 @@
  */
 
 module.exports = {
-    about: {
-        alias: 'r',
-        type: 'string',
-        description: 'Remove specified package',
-        demandOption: false,
-    },
-
-    async getAbout() {
-        return this.about
-    },
-
     async Execute(args: string) {
+
+        const filePath = `${args}.zip`
+
         console.log('work in progress')
     }
 }
