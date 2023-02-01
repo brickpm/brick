@@ -1,5 +1,5 @@
 /* 
- * This file is part of Brick Package Manager or BrickPM (https://github.com/brickpm/brick/)
+ * This file is part of the Brick Package Manager or BrickPM distribution (https://github.com/brickpm/brick/)
  * Copyright (c) 2023 JohainDev and contributors.
  * 
  * This source code is subject to the terms of the GNU General Public
