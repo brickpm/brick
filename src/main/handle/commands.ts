@@ -7,8 +7,6 @@
  * file, You can obtain one at: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-import { Options } from "../.."
-
 module.exports = {
     data: {
         name: 'CommandHandler',
