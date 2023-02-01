@@ -12,13 +12,16 @@ const axios = require('axios')
 
 module.exports = {
     about: {
-        name: 'install',
+        alias: 'i',
+        type: 'string',
         description: 'Install specified package',
-        version: '0.0.1',
-        author: 'Brick (JohainDev)',
-        alias: ['i']
+        demandOption: false,
     },
-    
+
+    async getAbout() {
+            return this.about
+    },
+
     async Execute(args: string) {
 
         const url = `https://github.com/brickpm/brick-server/raw/main/packages/${args}.zip`

@@ -7,6 +7,10 @@
  * file, You can obtain one at: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
+const aliases = {
+    install: require('../command/install').getAlias(),
+}
+
 module.exports = {
     data: {
         name: 'CommandHandler',
@@ -16,10 +20,18 @@ module.exports = {
     },
 
     async Execute(args: string[]) {
-        if ((args[0] == null || args[0] == undefined || args[0] == '') || (args[1] == null || args[1] == undefined || args[1] == '')) {
-            console.log('Usage: brick <operation> <package>\n<operation>: install | remove | update\n<package>: Package to install')
+        if ((args[0] == null || args[0] == undefined || args[0] == '')) {
+            if (args[1] == null || args[1] == undefined || args[1] == '') {
+                console.log('Usage: brick <operation> <package>\n<operation>: install | remove | update\n<package>: Package to install')
+            } else {
+                console.log('Usage: brick <operation> <package>\n<operation>: install | remove | update\n<package>: Package to install')
+            }
         } else {
-            require(`../command/${args[0].toLowerCase()}.ts`).Execute(args[1])
+            if (args[0].toLowerCase() == aliases.install.value) {
+                require(`../command/install.ts`).Execute(args[1])
+            } else {
+                require(`../command/${args[0].toLowerCase()}.ts`).Execute(args[1])
+            }
         }
     }
 }

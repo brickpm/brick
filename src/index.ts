@@ -9,9 +9,17 @@
 
 const yargs = require('yargs')
 
-export const Options = yargs
+const options = yargs
     .usage('Usage: brick <operation> <package>\n<operation>: install | remove | update\n<package>: Package to install')
+    .options({
+        install: require('./main/command/install').getAbout(),
+        remove: require('./main/command/remove').getAbout(),
+    })
     .help(true).argv
 
-console.log(yargs.argv._)
-require('./main/handle/commands.ts').Execute(yargs.argv._)
+if (yargs.argv.install != ('' || undefined || null )) {
+    require('./main/command/install').Execute(yargs.argv.install)
+} else if (yargs.argv.remove != ('' || undefined || null)) {
+    require('./main/command/remove').Execute(yargs.argv.remove)
+}
+//require('./main/handle/commands.ts').Execute(yargs.argv._)
